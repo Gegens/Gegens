@@ -1,0 +1,31 @@
+let soru;
+let cevap;
+let hak, tahmin;
+let puan;
+
+hak = Number(prompt('Kaç seferde tahmin edeceksin?'));
+soru = Math.floor((Math.random()*10)+1);
+tahmin = 0;
+console.log(soru)
+console.log(hak)
+
+
+
+while(hak>0)   {
+          hak--;
+          tahmin++;
+          cevap = Number(prompt('Tutulan sayıyı tahmin edin.'));
+          puan = (100-(hak*4)*(tahmin-1));
+          if(cevap==soru){
+               console.log(` ${tahmin} seferde doğru bildiniz. Puanınız: ${puan} Tebrikler.`)
+               break;
+          }else if(cevap<soru){
+               console.log('Daha yüksek bir sayı.')
+          }else {
+               console.log('Daha düşük bir sayı.')
+                         }
+          if(hak==0){
+               console.log('Bilemediniz. Sayı: '+soru)
+               break;
+                         }
+}
