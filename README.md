@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Gegens
 - 👀 I’m interested in Coding
-- 🌱 I’m currently learning Css and Js
+- 🌱 I’m currently learning CSS and JS
 
 <!---
 Gegens/Gegens is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
