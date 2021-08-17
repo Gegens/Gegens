@@ -1,0 +1,37 @@
+var hesapA = {
+    firstName : 'Yavuz',
+    surName : 'Koç',
+    hesapNo : '12345',
+    bakiye : 5000,
+    ekBakiye : 1000
+}
+
+var hesapB = {
+    firstName : 'İsmet',
+    surName : 'Kandilli',
+    hesapNo : '12346',
+    bakiye : 3000,
+    ekBakiye : 500
+}
+
+function paraCek(hesap,miktar) {
+    console.log(`Merhaba ${hesap.firstName}`)
+
+    if(hesap.bakiye>=miktar){
+        hesap.bakiye=hesap.bakiye - miktar;
+        console.log(`Paranızı alabilirsiniz. \n Kalan bakiye: ${hesap.bakiye} \n Kalan Ek Hesap Bakiyesi: ${hesap.ekBakiye}`);
+    } else {
+        console.log('Hesabınızda yeterli miktar mevcut değil.')
+        if (hesap.bakiye + hesap.ekBakiye >= miktar){
+            if(confirm('Ek hesabınızı kullanmak ister misiniz?')){
+                hesap.bakiye = 0,
+                hesap.ekBakiye = hesap.ekBakiye - (miktar - hesap.bakiye)
+                console.log(`Paranızı alabilirsiniz. \n Ana Hesap bakiye:${hesap.bakiye} \n Ek Hesap Bakiye:${hesap.ekBakiye} `)
+            } else {
+                console.log('Para çekme işlemi iptal edildi.')
+            }
+        }
+    }
+}
+
+paraCek(hesapA,2000);
